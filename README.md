@@ -6,7 +6,7 @@ An automated embedded testing and telemetry validation fixture developed on an E
 
 ## Hardware Validation Demo
 
-https://github.com/user-attachments/assets/7e44f070-9274-4a68-9aa7-df6a351f0246
+https://github.com/user-attachments/assets/bae1f2e1-fe89-4e2b-92e1-7cf12b4496b9
 
 ---
 
