@@ -4,25 +4,31 @@ An automated embedded testing and telemetry validation fixture developed on an E
 
 ---
 
+## Hardware Validation Demo
+
+https://github.com/user-attachments/assets/7e44f070-9274-4a68-9aa7-df6a351f0246
+
+---
+
 ## System Architecture
 
 ```text
-+------------------------+             +------------------------+
-| STMicroelectronics     |   I2C Bus   | ESP8266 NodeMCU        |
-| VL53L0X ToF Sensor     |<----------->| (GPIO4/D2 SDA,         |
-| Address: 0x29 (50 kHz) |             |  GPIO5/D1 SCL)         |
-+------------------------+             +-----------+------------+
-                                                   |
-+------------------------+     GPIO12/D6           |
-| External Input / Touch |-------------------------+
-| Active-Low Trigger     | (Hardware ISR / FALLING)
-+------------------------+
-                                                   |
-                                                   | UART Serial
-                                                   | (115200 Baud)
-                                                   v
-                                       +------------------------+
-                                       | Host Test Automation   |
-                                       | Python (PySerial)      |
-                                       | CSV Telemetry Logger   |
-                                       +------------------------+
++-----------------------+              +-------------------+
+| STMicroelectronics    |   I2C Bus    | ESP8266 NodeMCU   |
+| VL53L0X ToF Sensor    |------------->| (GPIO4/D2 SDA,    |
+| Address: 0x29 (50 kHz)|              |  GPIO5/D1 SCL)    |
++-----------------------+              +-------------------+
+                                                 |
++-----------------------+   GPIO12/D6            |
+| External Input / Touch|------------------------+
+| Active-Low Trigger    | (Hardware ISR / FALLING)
++-----------------------+                        |
+                                                 |
+                                                 | UART Serial
+                                                 | (115200 Baud)
+                                                 v
+                                       +-------------------+
+                                       | Host Test Automation|
+                                       | Python (PySerial)   |
+                                       | CSV Telemetry Logger|
+                                       +-------------------+
